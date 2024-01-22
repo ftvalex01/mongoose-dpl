@@ -11,12 +11,6 @@ const connectionString = `${mongoURI}${mongoUser}:${mongoPassword}`;
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
-
-
-
-
-
-
 let Person = require('./models/personSchema');
 
 
