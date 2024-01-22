@@ -21,7 +21,7 @@ let Person = require('./models/personSchema');
 
 
 
-createAndSavePerson((err, data) => {
+const createAndSavePerson= ((err, data) => {
   const personInstance = new Person({
     name: 'Alejandro', 
     age: 30,         
