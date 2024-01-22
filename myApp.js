@@ -40,14 +40,6 @@ createAndSavePerson((err, data) => {
 });
 
 
-createAndSavePerson((err, data) => {
-  if (err) {
-    console.error('Error saving the person:', err);
-  } else {
-    console.log('Person saved successfully:', data);
-  }
-});
-
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
 };
