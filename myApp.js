@@ -20,12 +20,12 @@ mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: 
 let Person = require('./models/personSchema');
 
 
-function createAndSavePerson(callback) {
-  
+
+createAndSavePerson((err, data) => {
   const personInstance = new Person({
-    name: 'John Doe', // Replace with actual name
-    age: 30,         // Replace with actual age
-    favoriteFoods: ['pizza', 'pasta'] // Replace with actual favorite foods
+    name: 'Alejandro', 
+    age: 30,         
+    favoriteFoods: ['potaje lentejas', 'pasta'] 
   });
 
   // Save the document instance to the database
@@ -36,7 +36,10 @@ function createAndSavePerson(callback) {
       callback(null, data);
     }
   });
-}
+  
+});
+
+
 createAndSavePerson((err, data) => {
   if (err) {
     console.error('Error saving the person:', err);
@@ -44,11 +47,6 @@ createAndSavePerson((err, data) => {
     console.log('Person saved successfully:', data);
   }
 });
-
-
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
-};
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
