@@ -139,9 +139,10 @@ const removeManyPeople = (done) => {
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
-  Person.find( {favoriteFoods:foodToSearch},(err,dataFind)=>{
-    if(dataFind){
-      dataFind.sort({ name: 1 }).limit(2).select({ age: 0 })
+  Person.find({favoriteFoods:foodToSearch})
+     .sort({ name: 1})
+     .limit(2)
+     .select({ age: 0 })
       .exec((err, data) => {
         if (err) {
           done(err);
@@ -149,9 +150,7 @@ const queryChain = (done) => {
           done(null, data);
         }
       });
-    }
-  })
-};
+    };
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
