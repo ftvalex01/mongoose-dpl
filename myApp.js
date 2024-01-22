@@ -1,6 +1,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+
+
 const mongoURI = process.env.MONGO_URI;
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASSWORD;
@@ -8,7 +10,15 @@ const mongoPassword = process.env.MONGO_PASSWORD;
 const connectionString = `${mongoURI}${mongoUser}:${mongoPassword}`;
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let Person;
+
+
+
+
+
+
+
+let Person = require('./models/personSchema');
+
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
