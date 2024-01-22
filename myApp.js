@@ -21,23 +21,23 @@ let Person = require('./models/personSchema');
 
 
 
-const createAndSavePerson= ((err, data) => {
+const createAndSavePerson = (done) => {
   const personInstance = new Person({
     name: 'Alejandro', 
     age: 30,         
-    favoriteFoods: ['potaje lentejas', 'pasta'] 
+    favoriteFoods: ['potaje de lentejas', 'pasta'] 
   });
 
   // Save the document instance to the database
   personInstance.save(function(err, data) {
     if (err) {
-      callback(err, null);
+      done(err, null);
     } else {
       done(null, data);
     }
   });
-  
-});
+};
+
 
 
 const createManyPeople = (arrayOfPeople, done) => {
